@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="re.css">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'a';
+            src: url(fonts/Autumn\ in\ September.ttf);
+        }
+        body{
+            background-image: url(img/5.png);
+            background-repeat: no-repeat;
+            background-size:1985px 968px ;
+        }
+        h1{
+            color: rgb(0, 0, 0);
+            font-family: 'a';
+            font-size: 30px;
+            animation: blink 3.5s ;
+        }
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            51% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        section{
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            animation: troca-cor 6s infinite;
+            padding: 15px;
+        }
+        @keyframes troca-cor {
+            0% {
+            box-shadow: 
+                0 0 0 4px #0d0d0d,
+                0 0 0 8px #ff0000,
+                0 0 0 12px #0d0d0d,
+                0 0 0 16px #ff0000;
+    
+            }
+            50% {
+            box-shadow: 
+                0 0 0 4px #ff0000,
+                0 0 0 8px #0d0d0d,
+                0 0 0 12px #ff0000,
+                0 0 0 16px #0d0d0d;
+            }
+            100% {
+            box-shadow: 
+                0 0 0 4px #0d0d0d,
+                0 0 0 8px #ff0000,
+                0 0 0 12px #0d0d0d,
+                0 0 0 16px #ff0000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+    <h1>O seu resultado deu a Lindinha</h1>
+    <h1 id="porcentagem"></h1>
+    </section>
+    <script>
+        let doci = Number(localStorage.getItem('contDoc'));
+        let lind = Number(localStorage.getItem('contLind'));
+        let flor = Number(localStorage.getItem('contFlor'));
+
+        let total = doci+lind+flor
+        let porc = (flor/total)*100
+        document.getElementById('porcentagem').innerHTML = porc + "%";
+    </script>
+</body>
+</html>

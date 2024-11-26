@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'p' ;
+    src: url(fonts/powerpuff\ girls\ font.ttf);
+}
+@font-face {
+    font-family: 'w';
+    src: url(fonts/Spicy\ Pizza.ttf);
+}
+@font-face {
+    font-family: 'a';
+    src: url(fonts/Autumn\ in\ September.ttf);
+}
+
+body{
+    background-image: url(img/F2.png);
+    background-repeat: no-repeat;
+    background-size:1985px 968px ;
+
+}
+#nomeSegunda{
+    color: rgb(0, 0, 0);
+    font-family: 'p';
+    text-align: center;
+    font-size: 40px;
+}
+h1{
+    color: rgb(0, 0, 0);
+    font-family: 'a';
+    font-size: 30px;
+}
+label{
+    color: rgb(0, 0, 0);
+    font-family: 'a';
+    font-size: 30px;
+}
+label:hover{
+    color: #a0995d;
+}
+.Q{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: troca-cor 6s infinite;
+    padding: 15px;
+}
+@keyframes troca-cor {
+    0% {
+      box-shadow: 
+        0 0 0 4px #0d0d0d,
+        0 0 0 8px #ff0000,
+        0 0 0 12px #0d0d0d,
+        0 0 0 16px #31cfff,
+        0 0 0 18px #0d0d0d,
+        0 0 0 20px #13df00;
+    }
+    50% {
+      box-shadow: 
+        0 0 0 4px #0d0d0d,
+        0 0 0 8px #13df00,
+        0 0 0 12px #0d0d0d,
+        0 0 0 16px #ff0000,
+        0 0 0 18px #0d0d0d,
+        0 0 0 20px #31cfff;
+    }
+    100% {
+      box-shadow: 
+      0 0 0 4px #0d0d0d,
+      0 0 0 8px #ff0000,
+      0 0 0 12px #0d0d0d,
+      0 0 0 16px #31cfff,
+      0 0 0 18px #0d0d0d,
+      0 0 0 20px #13df00;
+    }
+  }
+button{
+    border: none;
+    font-size: 25px;
+    font-family: 'a';
+    color: rgb(0, 0, 0);
+    background-color: #fff7ae;
+    width: 80px;
+    height: 30px;
+    animation: borda 4s infinite;
+}
+button:hover{
+    color: #a0995d;
+    transform: scale(1.2);
+}
+@keyframes borda {
+    0%{
+        box-shadow: 
+        0 0 0 2px #13df00;
+    }
+    50%{
+        box-shadow: 
+        0 0 0 2px #ff0000;
+    }
+    100%{
+        box-shadow: 
+        0 0 0 2px #31cfff;
+    }
+}
+#resultadoFinal{
+    font-size: 30px;
+    color: #000000;
+    text-align: center;
+    animation: borda 2s infinite;
+}

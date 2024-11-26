@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=label, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        #inicio{
+            background-image: url(img/img1.png);
+        }
+        section{
+            width: 300px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            animation: troca-cor 5s infinite;
+            padding: 35px;
+        }
+        @keyframes troca-cor {
+            0% {
+                box-shadow: 
+                0 0 0 4px #0d0d0d,
+                0 0 0 8px #ff0000,
+                0 0 0 12px #0d0d0d,
+                0 0 0 16px #31cfff,
+                0 0 0 18px #0d0d0d,
+                0 0 0 20px #13df00;
+                }
+                50% {
+                box-shadow: 
+                    0 0 0 4px #0d0d0d,
+                    0 0 0 8px #13df00,
+                    0 0 0 12px #0d0d0d,
+                    0 0 0 16px #ff0000,
+                    0 0 0 18px #0d0d0d,
+                    0 0 0 20px #31cfff;
+                }
+                100% {
+                box-shadow: 
+                0 0 0 4px #0d0d0d,
+                0 0 0 8px #ff0000,
+                0 0 0 12px #0d0d0d,
+                0 0 0 16px #31cfff,
+                0 0 0 18px #0d0d0d,
+                0 0 0 20px #13df00;
+                }
+        }
+        button{
+            width: 150px;
+        }
+        label{
+            font-size: 35px;
+        }
+        input{
+            background-color: #fff7ae;
+            border: #aaa367 2.5px solid;
+            text-align: center;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body id="inicio">
+    <section>
+    <label>Digite seu nome:</label>
+    <input type="text" name="" id="nome">
+    <br>
+    <button onclick="gravarNome()">Começar o teste</button>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

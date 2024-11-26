@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Quizz</title>
+</head>
+<body>
+    <h1 id="nomeSegunda"></h1>
+    <section class="Q">
+    <div id="perguntas">
+        <div class="pergunta">
+            <h1>Qual Cor?</h1>
+            <label><input type="radio" name="p1" class="radios" value="docinho">Verde</label>
+            <label><input type="radio" name="p1" class="radios" value="florzinha">Vermelho</label>
+            <label><input type="radio" name="p1" class="radios" value="lindinha">Azul</label>
+        </div>
+    </div>
+    <div id="perguntas">
+        <div class="pergunta">
+            <h1>Você gosta mais?</h1>
+            <label><input type="radio" name="p2" class="radios" value="docinho">Lutar</label>
+            <label><input type="radio" name="p2" class="radios" value="florzinha">Estudar</label>
+            <label><input type="radio" name="p2" class="radios" value="lindinha">Brincar</label>
+        </div>
+    </div>
+    <div id="perguntas">
+        <div class="pergunta">
+            <h1>Qual sua comida favorita?</h1>
+            <label><input type="radio" name="p3" class="radios" value="docinho">Salgadinho</label>
+            <label><input type="radio" name="p3" class="radios" value="florzinha">Frutas</label>
+            <label><input type="radio" name="p3" class="radios" value="lindinha">Doces</label>
+        </div>
+    </div>
+    <div id="perguntas">
+        <div class="pergunta">
+            <h1>Qual sua lugar favorita?</h1>
+            <label><input type="radio" name="p4" class="radios" value="docinho">Pista de Skate</label>
+            <label><input type="radio" name="p4" class="radios" value="florzinha">Biblioteca</label>
+            <label><input type="radio" name="p4" class="radios" value="lindinha">Parquinho</label>
+        </div>
+        <br>
+        <button class="button" onclick="contarVotos()">Resultado</button>
+        <h1 id="docinho"></h1>
+        <h1 id="florzinha"></h1>
+        <h1 id="lindinha"></h1>
+    </div>
+        <h1 id="resultadoFinal"></h1>
+    <script>
+            let h1 = document.getElementById('nomeSegunda');
+            let nome = localStorage.getItem('nomeSalvo');
+            h1.innerHTML = 'bem vinda ao quizz das meninas super poderosas ' + nome;
+    </script>
+    <script>
+        function contarVotos(){
+            //criando contadores
+            let contDoc = 0;
+            let contFlor = 0;
+            let contLind = 0;
+
+            //obter os radios da classe radios
+            let radios = document.getElementsByClassName('radios')
+
+            //percorrendo todos os elemnetos radios
+            for(let i=0; i < radios.length; i++){
+                //testar qual radios esta selecionado
+                if(radios[i].checked){
+                   if(radios[i].value == "docinho"){
+                        contDoc++
+                   }else if(radios[i].value == "florzinha"){
+                        contFlor++
+                   }else if(radios[i].value == "lindinha"){
+                        contLind++
+                   }
+                }
+            }
+            //colocando contadores nos h1
+    
+            //document.getElementById("docinho").innerHTML = "Votos Docinho: " + contDoc
+            //document.getElementById("florzinha").innerHTML = "Votos Florzinha: " + contFlor
+            //document.getElementById("lindinha").innerHTML = "Votos Lindinha: " + contLind
+            
+        
+            //mostrando o resultado final
+            let resultado  = document.getElementById("resultadoFinal")
+            if(contDoc > contFlor && contDoc > contLind ){
+                resultado.innerHTML = nome + " é a Docinho"
+                //redirecionando para uma página
+                setTimeout(() => {
+                    window.open('docinho.html')
+                }, 1500);
+            }else if(contFlor > contLind){
+                 resultado.innerHTML = nome + " é a Florzinha"
+                 setTimeout(() => {
+                    window.open('florzinha.html')
+                }, 1500);
+            }else{
+                 resultado.innerHTML = nome + " é a Lindinha"
+                 setTimeout(() => {
+                    window.open('lindinha.html')
+                }, 1500);
+            }
+        
+            localStorage.setItem('contDoc', contDoc);
+            localStorage.setItem('contLind', contLind);
+            localStorage.setItem('contFlor', contFlor);
+        }
+    </script>
+</section>
+</body>
+</html>
